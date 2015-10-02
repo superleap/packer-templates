@@ -19,6 +19,14 @@
             "scripts/vmware.sh",
             "scripts/cleanup.sh"
           ]
+        },
+        "parallels-iso": {
+          "scripts": [
+            "scripts/base.sh",
+            "scripts/vagrant.sh",
+            "scripts/parallels.sh",
+            "scripts/cleanup.sh"
+          ]
         }
       }
     }
@@ -32,6 +40,9 @@
         },
         "vmware": {
           "output": "centos-6-7-x64-vmware.box"
+        },
+        "parallels": {
+          "output": "centos-6-7-x64-parallels.box"
         }
       }
     }
@@ -84,6 +95,31 @@
         "numvcpus": "1",
         "cpuid.coresPerSocket": "1"
       }
+    },
+    {
+      "type": "parallels-iso",
+      "boot_command": [
+        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
+      ],
+      "boot_wait": "10s",
+      "disk_size": 40520,
+      "guest_os_type": "redhat",
+      "http_directory": "http",
+      "iso_checksum": "2ed5ea551dffc3e4b82847b3cee1f6cd748e8071",
+      "iso_checksum_type": "sha1",
+      "iso_url": "http://mirror.hmc.edu/centos/6/isos/x86_64/CentOS-6.7-x86_64-minimal.iso",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_port": 22,
+      "ssh_wait_timeout": "10000s",
+      "shutdown_command": "echo '/sbin/halt -h -p' > /tmp/shutdown.sh; echo 'vagrant'|sudo -S sh '/tmp/shutdown.sh'",
+      "parallels_tools_flavor": "lin",
+      "parallels_tools_mode" : "attach",
+      "prlctl_version_file": ".prlctl_version",
+      "prlctl": [
+        ["set", "{{.Name}}", "--memsize", "512"],
+        ["set", "{{.Name}}", "--cpus", "1"]
+      ]
     }
   ]
 }
