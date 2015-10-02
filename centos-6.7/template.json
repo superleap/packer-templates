@@ -115,7 +115,8 @@
       "ssh_wait_timeout": "10000s",
       "shutdown_command": "echo '/sbin/halt -h -p' > /tmp/shutdown.sh; echo 'vagrant'|sudo -S sh '/tmp/shutdown.sh'",
       "parallels_tools_flavor": "lin",
-      "parallels_tools_mode" : "attach",
+      "parallels_tools_mode" : "upload",
+      "parallels_tools_guest_path": "prl-tools-{{.Flavor}}.iso",
       "prlctl_version_file": ".prlctl_version",
       "prlctl": [
         ["set", "{{.Name}}", "--memsize", "512"],
