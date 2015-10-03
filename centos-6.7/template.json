@@ -40,13 +40,13 @@
       "compression_level": 9,
       "override": {
         "virtualbox": {
-          "output": "centos-6-7-x64-virtualbox.box"
+          "output": "centos-67-x64-virtualbox.box"
         },
         "vmware": {
-          "output": "centos-6-7-x64-vmware.box"
+          "output": "centos-67-x64-vmware.box"
         },
         "parallels": {
-          "output": "centos-6-7-x64-parallels.box"
+          "output": "centos-67-x64-parallels.box"
         }
       }
     }
