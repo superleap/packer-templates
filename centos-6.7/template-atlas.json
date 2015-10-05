@@ -12,15 +12,6 @@
             "scripts/cleanup.sh",
             "scripts/zerodisk.sh"
           ]
-        },
-        "vmware-iso": {
-          "scripts": [
-            "scripts/base.sh",
-            "scripts/vagrant.sh",
-            "scripts/vmware.sh",
-            "scripts/cleanup.sh",
-            "scripts/zerodisk.sh"
-          ]
         }
       }
     }
@@ -50,19 +41,6 @@
         "version": "{{ user `version` }}",
         "created_at": "{{timestamp}}"
       }
-    },
-    {
-      "type": "atlas",
-      "only": [
-        "vmware-iso"
-      ],
-      "artifact": "superleap/centos-67-x64",
-      "artifact_type": "vagrant.box",
-      "metadata": {
-        "provider": "vmware_fusion",
-        "version": "{{ user `version` }}",
-        "created_at": "{{timestamp}}"
-      }
     }
   ],
   "builders": [
@@ -89,30 +67,6 @@
         [ "modifyvm", "{{.Name}}", "--memory", "512" ],
         [ "modifyvm", "{{.Name}}", "--cpus", "1" ]
       ]
-    },
-    {
-      "type": "vmware-iso",
-      "boot_command": [
-        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
-      ],
-      "boot_wait": "10s",
-      "disk_size": 40520,
-      "guest_os_type": "RedHat_64",
-      "http_directory": "http",
-      "iso_checksum": "2ed5ea551dffc3e4b82847b3cee1f6cd748e8071",
-      "iso_checksum_type": "sha1",
-      "iso_url": "http://mirror.hmc.edu/centos/6/isos/x86_64/CentOS-6.7-x86_64-minimal.iso",
-      "ssh_username": "vagrant",
-      "ssh_password": "vagrant",
-      "ssh_port": 22,
-      "ssh_wait_timeout": "10000s",
-      "shutdown_command": "echo '/sbin/halt -h -p' > /tmp/shutdown.sh; echo 'vagrant'|sudo -S sh '/tmp/shutdown.sh'",
-      "tools_upload_flavor": "linux",
-      "vmx_data": {
-        "memsize": "512",
-        "numvcpus": "1",
-        "cpuid.coresPerSocket": "1"
-      }
     }
   ],
   "push": {
