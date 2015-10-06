@@ -13,8 +13,6 @@ Download the latest packer from http://www.packer.io/downloads.html and unzip th
 
 If you're using Homebrew
 
-::
-
     $ brew tap homebrew/binary
     $ brew install packer
 
@@ -22,25 +20,14 @@ If you're using Homebrew
 Running Packer
 --------------
 
-::
-
     $ git clone git@github.com:superleap/packer-templates.git
-    $ cd packer-templates
+    $ cd centos-6.7
     $ packer build template.json
 
 
 If you want to build only virtualbox.
 
-::
-
     $ packer build -only=virtualbox-iso template.json
-
-
-Parallel builds can be run on 0.6.0 or later packer version.
-
-::
-
-    $ packer build -parallel=true template.json
 
 
 Supported versions
