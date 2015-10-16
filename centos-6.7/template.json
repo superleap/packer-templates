@@ -29,19 +29,13 @@
     {
       "type": "vagrant",
       "compression_level": 9,
-      "override": {
-        "virtualbox": {
-          "output": "centos-67-x64-virtualbox.box"
-        },
-        "parallels": {
-          "output": "centos-67-x64-parallels.box"
-        }
-      }
+      "output": "centos-67-x64-1508-{{.Provider}}.box"
     }
   ],
   "builders": [
     {
       "type": "virtualbox-iso",
+      "headless": true,
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
       ],
@@ -66,6 +60,7 @@
     },
     {
       "type": "parallels-iso",
+      "headless": true,
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
       ],
