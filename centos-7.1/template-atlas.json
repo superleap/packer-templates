@@ -21,18 +21,18 @@
       {
         "type": "vagrant",
         "compression_level": 9,
-        "output": "centos-67-x64-1508-{{.Provider}}.box"
+        "output": "centos-71-x64-1503-{{.Provider}}.box"
       },
       {
         "type": "atlas",
         "only": [
           "virtualbox-iso"
         ],
-        "artifact": "superleap/centos-67-x64",
+        "artifact": "superleap/centos-71-x64",
         "artifact_type": "vagrant.box",
         "metadata": {
           "provider": "virtualbox",
-          "version": "0.0.1",
+          "version": "0.0.2",
           "created_at": "{{timestamp}}"
         }
       }
