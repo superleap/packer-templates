@@ -3,6 +3,7 @@
     {
       "type": "shell",
       "execute_command": "echo 'vagrant'| {{.Vars}} sudo -S sh '{{.Path}}'",
+      "pause_before": "10s",
       "override": {
         "virtualbox-iso": {
           "scripts": [
@@ -29,13 +30,12 @@
     {
       "type": "vagrant",
       "compression_level": 9,
-      "output": "centos-71-x64-1503-{{.Provider}}.box"
+      "output": "centos-71-x64-1511-{{.Provider}}.box"
     }
   ],
   "builders": [
     {
       "type": "virtualbox-iso",
-      "headless": true,
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
       ],
@@ -43,9 +43,9 @@
       "disk_size": 40520,
       "guest_os_type": "RedHat_64",
       "http_directory": "http",
-      "iso_checksum": "7c1e34e95c991175290d704dbdcc6531774cbecb",
-      "iso_checksum_type": "sha1",
-      "iso_url": "http://mirrors.ukfast.co.uk/sites/ftp.centos.org/7/isos/x86_64/CentOS-7-x86_64-Minimal-1503-01.iso",
+      "iso_checksum": "f90e4d28fa377669b2db16cbcb451fcb9a89d2460e3645993e30e137ac37d284",
+      "iso_checksum_type": "sha256",
+      "iso_url": "http://mirrors.ukfast.co.uk/sites/ftp.centos.org/7/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -60,7 +60,6 @@
     },
     {
       "type": "parallels-iso",
-      "headless": true,
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
       ],
@@ -68,9 +67,9 @@
       "disk_size": 40520,
       "guest_os_type": "centos",
       "http_directory": "http",
-      "iso_checksum": "7c1e34e95c991175290d704dbdcc6531774cbecb",
-      "iso_checksum_type": "sha1",
-      "iso_url": "http://mirrors.ukfast.co.uk/sites/ftp.centos.org/7/isos/x86_64/CentOS-7-x86_64-Minimal-1503-01.iso",
+      "iso_checksum": "f90e4d28fa377669b2db16cbcb451fcb9a89d2460e3645993e30e137ac37d284",
+      "iso_checksum_type": "sha256",
+      "iso_url": "http://mirrors.ukfast.co.uk/sites/ftp.centos.org/7/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
