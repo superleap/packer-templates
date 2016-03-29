@@ -21,7 +21,7 @@ Running Packer
 --------------
 
     $ git clone git@github.com:superleap/packer-templates.git
-    $ cd centos-6.7
+    $ cd centos-7.1
     $ packer build template.json
 
 
@@ -33,4 +33,4 @@ If you want to build only virtualbox.
 Supported versions
 ------------------
 
-This templates was tested using a packer 0.8.6
+This templates was tested using a packer 0.10.0
