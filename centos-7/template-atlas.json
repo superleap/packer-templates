@@ -24,18 +24,18 @@
       {
         "type": "vagrant",
         "compression_level": 9,
-        "output": "centos-71-x64-1511-{{.Provider}}.box"
+        "output": "centos-7-x64-1511-{{.Provider}}.box"
       },
       {
         "type": "atlas",
         "only": [
           "virtualbox-iso"
         ],
-        "artifact": "superleap/centos-71-x64",
+        "artifact": "superleap/centos-7-x64",
         "artifact_type": "vagrant.box",
         "metadata": {
           "provider": "virtualbox",
-          "version": "0.2.0",
+          "version": "0.3.0",
           "created_at": "{{timestamp}}"
         }
       }
@@ -68,7 +68,7 @@
     }
   ],
   "push": {
-    "name": "superleap/centos-71-x64",
-    "message": "CentOS 7.1 x64 minimal install with guest additions"
+    "name": "superleap/centos-7-x64",
+    "message": "CentOS 7.2 x64 minimal install with guest additions"
   }
 }

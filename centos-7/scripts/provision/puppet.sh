@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Install puppet 4.2 from puppetlabs repo
+# Install puppet 4.4 from puppetlabs repo
 if [[ ! -f '/.leap/installed.puppet' ]]; then
     yum -y --nogpgcheck install https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
     yum -y install puppet-agent

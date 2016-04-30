@@ -34,12 +34,13 @@
     {
       "type": "vagrant",
       "compression_level": 9,
-      "output": "centos-71-x64-1511-{{.Provider}}.box"
+      "output": "centos-7-x64-1511-{{.Provider}}.box"
     }
   ],
   "builders": [
     {
       "type": "virtualbox-iso",
+      "headless": true,
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
       ],

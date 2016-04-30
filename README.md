@@ -21,7 +21,7 @@ Running Packer
 --------------
 
     $ git clone git@github.com:superleap/packer-templates.git
-    $ cd centos-7.1
+    $ cd centos-7
     $ packer build template.json
 
 
